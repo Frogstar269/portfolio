@@ -1,3 +1,499 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*::before, *::after {
+    box-sizing: inherit;
+}
+@font-face {
+    font-family: PixelMplus12;
+    src: url(font/PixelMplus12-Regular.ttf);
+}
+html{
+    display: block;
+}
 body{
-    color: red;
+    overflow-x: hidden;
+    font-family: 'PixelMplus12', sans-serif;
+    font-weight: lighter;
+    font-size: 20pt;
+}
+
+/*共通部分*/
+.b-navy{
+    background-color: rgb(37, 48, 89);
+}
+.b-ygreen{
+    background-color: rgb(177, 226, 93);
+}
+.b-white{
+    background-color: #fff;
+}
+.c-navy{
+    color: rgb(37, 48, 89);
+}
+.c-ygreen{
+    color: rgb(177, 226, 93);
+}
+.c-white{
+    color: #fff;
+}
+li{
+    list-style: none;
+}
+a, img{
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.tilt{
+    transform-origin: top left;
+    transform: rotateZ(-15deg);
+}
+.vertical{
+    transform-origin: bottom left;
+    transform: rotateZ(90deg);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.top{
+    position: sticky;
+    top: 0;
+    z-index: 400;
+    width: 100%;
+}
+.top div{
+    position: relative;
+    width: 200%;
+    height: 300pt;
+    left: -100pt;
+    top: -125pt;
+}
+.top div h4{
+    position: absolute;
+    bottom: 5pt;
+    left: 70pt;
+    font-size: 175%;
+}
+.font-nomal{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: lighter;
+}
+section{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/*個別設定*/
+
+/*ヘッダー（固定）*/
+header{
+    position: absolute;
+    height: 0;
+}
+.header-container{
+    position: fixed;
+    z-index: 999;
+    height: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.header-container div{
+    position: absolute;
+    transform-origin: top left;
+    height: 150pt;
+    width: 200%;
+    top: 0;
+    left: -100pt;
+    overflow: hidden;
+}
+.header-container ul{
+    position: absolute;
+    bottom: 0;
+    left: 75pt;
+    display: flex;
+}
+.header-container li{
+    position: relative;
+    bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    width: 75pt;
+    height: 100pt;
+}
+.header-container a{
+    position: absolute;
+    bottom: 0;
+    width: 75pt;
+    height: 150%;
+    text-align: center;
+    transition: all 0.3s;
+}
+.header-container a:hover{
+    bottom: -7.5pt;
+    background-color: rgba(177, 226, 93, 0.75);
+}
+.header-container a:active{
+    bottom: -7.5pt;
+    background-color: #fff;
+    color: rgb(177, 226, 93);
+}
+.header-container p{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+	bottom: 10pt;
+}
+.header-gotop{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.header-gotop div{
+    position: absolute;
+    transform-origin: bottom right;
+    height: 110pt;
+    width: 200%;
+    bottom: 0;
+    right: -100pt;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.header-gotop div:hover{
+    height: 120pt;
+}
+.header-gotop a{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100pt;
+    top: 0;
+    right: 50pt;
+    transition: all 0.3s;
+}
+.header-gotop a:hover{
+    top: -5pt;
+    color: rgb(177, 226, 93);
+    background-color: rgb(67, 80, 125);
+}
+.header-gotop a:active{
+    top: -50pt;
+    height: 200pt;
+    color: #fff;
+    background-color: rgb(177, 226, 93);
+}
+.header-gotop a h2, .header-gotop a p{
+    position: absolute;
+    font-size: 5vh;
+    right: 70pt;
+}
+.header-gotop a p{
+    font-size: 3vh;
+    top: 30pt;
+}
+
+/*HERO*/
+#hero{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+}
+#hero >div{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 888;
+}
+#hero .portfolio{
+    position: absolute;
+    top: 50px;
+    left: 350px;
+}
+#hero .portfolio h3{
+    position: relative;
+    font-size: 8.5vh;
+    display: block;
+}
+#hero .portfolio h3::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1000pt;
+    height: 5px;
+    left: -300px;
+    bottom: -15px;
+    background-color: rgb(177, 226, 93);
+}
+#hero .name{
+    position: absolute;
+    top: 500pt;
+    left: -50pt;
+    width: 2000pt;
+    background-color: rgb(177, 226, 93);
+}
+#hero .name h2{
+    position: relative;
+    font-size: 12.5vh;
+    display: block;
+    left: 500pt;
+}
+
+/*共通部分*/
+#about, #skills ,#works{
+    position: relative;
+    height: 800pt;
+    width: 100%;
+}
+.top{
+    height: 10pt;
+}
+#about span, #skills span, #works span, #contact span{
+    transform-origin: bottom left;
+    position: absolute;
+    top: -50pt;
+    left: 20%;
+    width: 700pt;
+    height: 5pt;
+}
+.bg-paralax{
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 30%;
+    top: -200pt;
+    right: 15%;
+    z-index: -10;
+    opacity: 0.5;
+}
+.bg-paralax .p-img{
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.bg-paralax .p-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 48, 89, 0.75);
+    background-size: cover;
+    z-index: 10;
+}
+#about .about-container, #skills .skills-container{
+    position: relative;
+    left: 25%;
+    top: 160pt;
+}
+
+/*ABOUT*/
+#about{
+    margin-top: 100pt;
+}
+#about .bg-paralax .p-img{
+    position: relative;
+    background-image: url("img/test1.jpeg");
+}
+#about .about-container{
+    line-height: 90pt;
+}
+#about h2{
+    margin-bottom: 30pt;
+    position: relative;
+    font-size: 10vh;
+    font-weight: normal;
+}
+#about p{
+    font-size: 5vh;
+}
+
+/*SKILLS*/
+#skills .bg-paralax .p-img{
+    background-image: url("img/test2.jpg");
+}
+#skills .skills-container{
+    line-height: 60pt;
+}
+#skills p{
+    font-size: 5vh;
+}
+
+/*WORKS*/
+#works .bg-paralax .p-img{
+    background-image: url("img/test3.jpg");
+    background-position-x: 50pt;
+    background-position-y: 50pt;
+}
+#works .scroll{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    top: -110pt;
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+#works .scroll::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+#works .scroll>div{
+    position: relative;
+    height: 1100pt;
+    top: 0;
+    left: 25%;
+}
+#works .scroll>div ul{
+    position: relative;
+    height: 100%;
+    top: 50pt;
+}
+#works .scroll ul li{
+    overflow: hidden;
+    width: 700pt;
+    height: 400pt;
+}
+#works .scroll ul li:nth-child(1){
+    position: relative;
+    top: 0;
+}
+#works .scroll ul li:nth-child(2){
+    position: relative;
+    top: -250pt;
+}
+#works .scroll ul li:nth-child(3){
+    position: relative;
+    top: -500pt;
+}
+#works .scroll ul li:nth-child(4){
+    position: relative;
+    top: -750pt;
+}
+#works .scroll ul li:nth-child(5){
+    position: relative;
+    top: -1000pt;
+}
+#works .scroll a{
+    position: relative;
+    display: inline-block;
+    top: 250pt;
+    left: -50pt;
+    width: 2000pt;
+    height: 100pt;
+    color: #fff;
+    font-size: 1.25rem;
+    background-color: rgba(37, 48, 89, 0.75);
+    z-index: 40;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+#works .scroll a:hover{
+    background-color: rgb(177, 226, 93);
+}
+#works .scroll a .img{
+    position: absolute;
+    left: 25pt;
+    width: 100pt;
+    height: 100%;
+}
+#works .scroll a .img >div{
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+#works .scroll a .img >div >div{
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom left;
+    transform: rotateZ(15deg);
+    width: 100%;
+    height: 130%;
+    background-color: #fff;
+}
+#works .scroll a p{
+    position: absolute;
+    top: 30pt;
+    left: 175pt;
+}
+
+#contact{
+    position: relative;
+    height: 550pt;
+    width: 100%;
+}
+#contact span{
+    top: -170pt;
+}
+#contact .contact-container{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 120vh;
+    top: 0;
+}
+#contact .box{
+    position: absolute;
+    top: 200pt;
+    left: 25%;
+}
+#contact .box h2{
+    color: rgb(37, 48, 89);
+    user-select: text;
+    font-weight: normal;
+}
+#contact .box .button{
+    position: relative;
+    top: 40pt;
+    line-height: 1;
+    font-size: 2.5rem;
+}
+#contact .box a{
+    color: rgba(37, 48, 89, 0.5);
+    width: 50pt;
+    height: 50pt;
+    transition: all 0.3s;
+}
+#contact .box a:hover{
+    color: rgb(187, 249, 79);
+}
+#contact .bottom{
+    position: absolute;
+    top: 675pt;
+    height: 10pt;
+    z-index: 400;
+    width: 100%;
+}
+#contact .bottom div{
+    position: relative;
+    width: 200%;
+    height: 300pt;
+    left: -100pt;
+    top: -125pt;
+    text-align: right;
+}
+#contact p{
+    text-align: center;
+    position: absolute;
+    font-family: 'PixelMplus12', sans-serif;
+    font-weight: lighter;
+    color: rgba(37, 48, 89, 0.25);
+    bottom: 225pt;
+    right: 50%;
+    z-index: 990;
 }
