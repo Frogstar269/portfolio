@@ -91,11 +91,12 @@ section{
 /*ヘッダー（固定）*/
 header{
     position: absolute;
+    top: 0;
     height: 0;
 }
 .header-container{
     position: fixed;
-    z-index: 999;
+    z-index: 1500;
     height: 0;
     width: 100%;
     top: 0;
@@ -151,7 +152,7 @@ header{
 }
 .header-gotop{
     position: fixed;
-    z-index: 999;
+    z-index: 1500;
     width: 100%;
     height: 0;
     bottom: 0;
@@ -169,7 +170,7 @@ header{
     overflow: hidden;
     transition: all 0.3s;
 }
-.header-gotop div:hover{
+.header-gotop div:hover, .header-gotop div:active{
     height: 120pt;
 }
 .header-gotop a{
@@ -204,22 +205,136 @@ header{
 
 /*HERO*/
 #hero{
-    position: relative;
+    position: absolute;
+    top: 0;
     width: 100%;
     min-height: 100vh;
-    display: none;
+    z-index: 1000;
 }
-#hero >div{
+#hero >.b-white{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 50;
+}
+#hero .hero-box{
+    position: fixed;
     width: 100%;
     height: 100%;
-    position: fixed;
-    background-color: #fff;
     z-index: 888;
+    align-items: center;
+}
+#hero .hero-box >.vertical{
+    position: absolute;
+    z-index: 30;
+    top: 490pt;
+    left: 24%;
+    width: 500pt;
+    height: 50pt;
+    transform: rotateZ(-90deg);
+}
+#hero .hero-box >.vertical p{
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    display : inline-block;
+    white-space : nowrap;
+    padding-left:100%;
+}
+#hero .hero-box >.vertical p.loop1{
+    animation : text_scroll 7.5s linear infinite;
+}
+#hero .hero-box >.vertical p.loop2{
+    animation : text_scroll 7.5s linear infinite;
+    animation-delay: 2.5s;
+}
+#hero .hero-box >.vertical p.loop3{
+    animation : text_scroll 7.5s linear infinite;
+    animation-delay: 5s;
+}
+#hero .hero-box >.vertical p.loop4{
+    animation : text_scroll 7.5s linear infinite;
+    animation-delay: 7.5s;
+}
+@keyframes text_scroll{
+    0% { transform: translateX(0)}
+    100% { transform: translateX(-100%)}
+}
+#hero .totop{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#hero .bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#hero .back{
+    position: absolute;
+    width: 100%;
+    height: 20pt;
+    top: 300pt;
+    opacity: 0.75;
+    z-index: 0;
+}
+#hero .back div{
+    position: absolute;
+    left: -10pt;
+    width: 200%;
+    height: 100%;
+}
+#hero .hero-img{
+    position: relative;
+    margin: auto;
+    right: -25%;
+    width: 250pt;
+    height: 100vh;
+    z-index: 20;
+    overflow: hidden;
+}
+#hero .hero-img .b-white{
+    position: absolute;
+    width: 250pt;
+    height: 100vh;
+    z-index: 0;
+}
+#hero .hero-img h1{
+    position: absolute;
+    margin: auto;
+    height: 200vh;
+    font-size: 12.5rem;
+    opacity: 0.5;
+    top: -50pt;
+    left: 25pt;
+    z-index: 45;
+    writing-mode: vertical-rl;
+    font-weight: bold;
+}
+#hero .hero-img .b-navy{
+    position: absolute;
+    opacity: 0.75;
+    width: 250pt;
+    height: 100vh;
+    z-index: 40;
+}
+#hero .hero-img img{
+    position: absolute;
+    width: 250pt;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 30;
+    opacity:0;
+	transition:all 1s ease-in-out;
 }
 #hero .portfolio{
     position: absolute;
     top: 50px;
-    left: 350px;
+    left: 25%;
 }
 #hero .portfolio h3{
     position: relative;
@@ -241,13 +356,141 @@ header{
     top: 500pt;
     left: -50pt;
     width: 2000pt;
+    height: auto;
     background-color: rgb(177, 226, 93);
+    z-index: 60;
 }
 #hero .name h2{
     position: relative;
     font-size: 12.5vh;
     display: block;
     left: 500pt;
+}
+/*登場・退場アニメーション用*/
+#hero{
+    position: absolute;
+    display: none;
+}
+#hero.active{
+    position: absolute;
+    display: block;
+}
+#hero .hero-box >.vertical.appear{
+    animation: hero-box-appear 1.5s both;
+}
+#hero .hero-box >.vertical.leave{
+    animation: hero-box-leave 0.25s both;
+}
+#hero >.b-white.appear{
+    animation: hero-box-appear 0.75s both;
+}
+#hero >.b-white.leave{
+    animation: hero-box-leave 1.5s both;
+}
+#hero .back.appear{
+    animation: hero-back-appear 1s both;
+}
+#hero .back.leave{
+    animation: hero-back-leave 1.5s both;
+}
+#hero .hero-img.appear{
+    animation: hero-img-appear 0.75s both;
+}
+#hero .hero-img.leave{
+    animation: hero-img-leave 1.5s both;
+}
+#hero .portfolio.appear{
+    animation: hero-port-appear 0.75s both;
+}
+#hero .portfolio.leave{
+    animation: hero-port-leave 1.5s both;
+}
+#hero .name.appear{
+    animation: hero-name-appear 1s both;
+}
+#hero .name.leave{
+    animation: hero-name-leave 1.5s both;
+}
+/*アニメーションの設定*/
+@keyframes hero-box-appear {
+    0%{ 
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes hero-box-leave {
+    0%{ 
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes hero-back-appear {
+    0%{ 
+        top: 700pt;
+    }
+    100% {
+        top: 300pt;
+    }
+}
+@keyframes hero-back-leave {
+    0%{ 
+        top: 300pt;
+    }
+    100% {
+        top: 10pt;
+    }
+}
+@keyframes hero-img-appear {
+    0%{ 
+        right: 75%;
+    }
+    100% {
+        right: -25%;
+    }
+}
+@keyframes hero-img-leave {
+    0%{ 
+        right: -25%;
+    }
+    100% {
+        right: -75%;
+    }
+}
+@keyframes hero-port-appear {
+    0%{ 
+        left: 125%;
+    }
+    100% {
+        left: 25%;
+    }
+}
+@keyframes hero-port-leave {
+    0%{ 
+        left: 25%;
+    }
+    100% {
+        left: -25%;
+    }
+}
+@keyframes hero-name-appear {
+    0%{ 
+        top: 0pt;
+    }
+    100% {
+        top: 500pt;
+    }
+}
+@keyframes hero-name-leave {
+    0%{ 
+        top: 500pt;
+    }
+    100% {
+        top: 800pt;
+    }
 }
 
 /*共通部分*/
@@ -300,15 +543,16 @@ header{
     position: relative;
     left: 25%;
     top: 160pt;
+    opacity: 0;
 }
 
 /*ABOUT*/
 #about{
-    margin-top: 100pt;
+    margin-top: 250pt;
 }
 #about .bg-paralax .p-img{
     position: relative;
-    background-image: url("img/test1.jpeg");
+    background-image: url("image/ando_1.jpg");
 }
 #about .about-container{
     line-height: 90pt;
@@ -325,7 +569,7 @@ header{
 
 /*SKILLS*/
 #skills .bg-paralax .p-img{
-    background-image: url("img/test2.jpg");
+    background-image: url("image/ando_2.png");
 }
 #skills .skills-container{
     line-height: 60pt;
@@ -336,9 +580,18 @@ header{
 
 /*WORKS*/
 #works .bg-paralax .p-img{
-    background-image: url("img/test3.jpg");
+    background-image: url("image/ando_3.png");
     background-position-x: 50pt;
     background-position-y: 50pt;
+}
+#works >.c-navy{
+    position: absolute;
+    display: block;
+    font-size: 2rem;
+    top: 250pt;
+    left: 20%;
+    text-align: center;
+    transform: translateZ(90deg);
 }
 #works .scroll{
     position: absolute;
@@ -348,6 +601,7 @@ header{
     top: -110pt;
     -ms-overflow-style: none;    /* IE, Edge 対応 */
     scrollbar-width: none;       /* Firefox 対応 */
+    opacity: 0;
 }
 #works .scroll::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     display:none;
@@ -451,6 +705,7 @@ header{
     position: absolute;
     top: 200pt;
     left: 25%;
+    opacity: 0;
 }
 #contact .box h2{
     color: rgb(37, 48, 89);
@@ -469,8 +724,14 @@ header{
     height: 50pt;
     transition: all 0.3s;
 }
-#contact .box a:hover{
-    color: rgb(187, 249, 79);
+#contact .box a:nth-child(1):hover{
+    color: rgb(79, 198, 249);
+}
+#contact .box a:nth-child(2):hover{
+    color: rgb(249, 96, 79);
+}
+#contact .box a:nth-child(3):hover{
+    color: rgb(241, 238, 44);
 }
 #contact .bottom{
     position: absolute;
@@ -496,4 +757,28 @@ header{
     bottom: 225pt;
     right: 50%;
     z-index: 990;
+}
+
+/*レイジーロード用アニメーション*/
+#about .about-container.lazy{
+    animation: lazy-load 0.75s both;
+}
+#skills .skills-container.lazy{
+    animation: lazy-load 0.75s both;
+}
+#works .scroll.lazy{
+    animation: lazy-load 0.75s both;
+}
+#contact .contact-container .box.lazy{
+    animation: lazy-load 0.75s both;
+}
+@keyframes lazy-load {
+    0%{ 
+        opacity: 0;
+        transform: translateY(150pt);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0pt);
+    }
 }
