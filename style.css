@@ -353,7 +353,7 @@ header{
 }
 #hero .name{
     position: absolute;
-    top: 500pt;
+    bottom: 50pt;
     left: -50pt;
     width: 2000pt;
     height: auto;
@@ -478,18 +478,18 @@ header{
 }
 @keyframes hero-name-appear {
     0%{ 
-        top: 0pt;
+        bottom: 1000pt;
     }
     100% {
-        top: 500pt;
+        bottom: -50pt;
     }
 }
 @keyframes hero-name-leave {
     0%{ 
-        top: 500pt;
+        bottom: -50pt;
     }
     100% {
-        top: 1000pt;
+        bottom: -650pt;
     }
 }
 
