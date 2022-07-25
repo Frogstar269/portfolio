@@ -481,15 +481,15 @@ header{
         bottom: 1000pt;
     }
     100% {
-        bottom: -50pt;
+        bottom: -80pt;
     }
 }
 @keyframes hero-name-leave {
     0%{ 
-        bottom: -50pt;
+        bottom: -80pt;
     }
     100% {
-        bottom: -650pt;
+        bottom: -675pt;
     }
 }
 
