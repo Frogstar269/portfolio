@@ -678,7 +678,22 @@ header{
     transform: rotateZ(15deg);
     width: 100%;
     height: 130%;
-    background-color: #fff;
+    background-size: cover;
+}
+#works .scroll a .img >div .game{
+    background-image: url("image/game_1.jpg");
+}
+#works .scroll a .img >div .song{
+    background-image: url("image/song_1.jpg");
+}
+#works .scroll a .img >div .mv{
+    background-image: url("image/mv_1.jpg");
+}
+#works .scroll a .img >div .mapping{
+    background-image: url("image/mapping.png");
+}
+#works .scroll a .img >div .contest{
+    background-image: url("image/contest_1.jpg");
 }
 #works .scroll a p{
     position: absolute;
