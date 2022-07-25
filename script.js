@@ -75,7 +75,7 @@ class ParallaxEffectBackground_works {
     setBackgroundPosition() {
         document.addEventListener('scroll', e => {
             const scrollTop = this.getScrollTop();
-            const position = scrollTop / this.devided - 240;
+            const position = scrollTop / this.devided - 250;
             if (position) {
                 document.querySelectorAll(this.target).forEach(element => {
                 element.style.backgroundPosition = 'left 50px top -' + position + 'px';
