@@ -713,7 +713,7 @@ header{
     position: absolute;
     overflow: hidden;
     width: 100%;
-    height: 120vh;
+    height: 600pt;
     top: 0;
 }
 #contact .box{
