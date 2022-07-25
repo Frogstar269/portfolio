@@ -758,7 +758,7 @@ header{
 #contact .bottom div{
     position: relative;
     width: 200%;
-    height: 300pt;
+    height: 1300pt;
     left: -100pt;
     top: -125pt;
     text-align: right;
@@ -769,7 +769,7 @@ header{
     font-family: 'PixelMplus12', sans-serif;
     font-weight: lighter;
     color: rgba(37, 48, 89, 0.25);
-    bottom: 225pt;
+    top: 30pt;
     right: 50%;
     z-index: 990;
 }
