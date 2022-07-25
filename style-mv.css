@@ -354,6 +354,14 @@ header{
     right: 50%;
     z-index: 990;
 }
+#explain .over{
+    position: absolute;
+    top: -110pt;
+    height: 115%;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    z-index: -1;
+}
 
 /*レイジーロード用アニメーション*/
 #about .about-container.lazy{
