@@ -608,7 +608,7 @@ header{
 }
 #works .scroll>div{
     position: relative;
-    height: 1100pt;
+    height: 1250pt;
     top: 0;
     left: 25%;
 }
@@ -641,6 +641,11 @@ header{
 #works .scroll ul li:nth-child(5){
     position: relative;
     top: -1000pt;
+}
+
+#works .scroll ul li:nth-child(6){
+    position: relative;
+    top: -1250pt;
 }
 #works .scroll a{
     position: relative;
@@ -680,8 +685,14 @@ header{
     height: 130%;
     background-size: cover;
 }
-#works .scroll a .img >div .game{
+#works .scroll a .img >div .lock{
     background-image: url("image/game_1.jpg");
+}
+#works .scroll a .img >div .angle{
+    background-image: url("image/angle_1.png");
+}
+#works .scroll a .img >div .shishi{
+    background-image: url("image/shishi_1.png");
 }
 #works .scroll a .img >div .song{
     background-image: url("image/song_1.jpg");

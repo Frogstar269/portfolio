@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*::before, *::after {
+    box-sizing: inherit;
+}
+@font-face {
+    font-family: PixelMplus12;
+    src: url(font/PixelMplus12-Regular.ttf);
+}
+html{
+    display: block;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'PixelMplus12', sans-serif;
+    font-weight: lighter;
+    font-size: 20pt;
+}
+
+/*共通部分*/
+.b-main{
+    background-color: rgb(64, 69, 89);
+}
+.b-sub{
+    background-color: rgb(158, 152, 164);
+}
+.b-white{
+    background-color: #fff;
+}
+.c-main{
+    color: rgb(64, 69, 89);
+}
+.c-sub{
+    color: rgb(158, 152, 164);
+}
+.c-white{
+    color: #fff;
+}
+li{
+    list-style: none;
+}
+a, img{
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.tilt{
+    transform-origin: top left;
+    transform: rotateZ(-15deg);
+}
+.vertical{
+    transform-origin: bottom left;
+    transform: rotateZ(90deg);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.top{
+    position: sticky;
+    top: 0;
+    z-index: 400;
+    width: 100%;
+}
+.top div{
+    position: relative;
+    width: 200%;
+    height: 300pt;
+    left: -100pt;
+    top: -125pt;
+}
+.top div h4{
+    position: absolute;
+    bottom: 5pt;
+    left: 70pt;
+    font-size: 175%;
+}
+.font-nomal{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: lighter;
+}
+section{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+#video {
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 177.77777778vh;
+    height: 56.25vw;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/*個別設定*/
+
+/*ヘッダー（固定）*/
+header{
+    position: absolute;
+    top: 0;
+    height: 0;
+}
+.header-container{
+    position: fixed;
+    z-index: 1500;
+    height: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.header-container div{
+    position: absolute;
+    transform-origin: top left;
+    height: 150pt;
+    width: 200%;
+    top: 0;
+    left: -100pt;
+    overflow: hidden;
+}
+.header-container ul{
+    position: absolute;
+    bottom: 0;
+    left: 75pt;
+    display: flex;
+}
+.header-container li{
+    position: relative;
+    bottom: 0;
+    margin-left: 5pt;
+    margin-right: 5pt;
+    width: 75pt;
+    height: 100pt;
+}
+.header-container a{
+    position: absolute;
+    bottom: 0;
+    width: 75pt;
+    height: 150%;
+    text-align: center;
+    transition: all 0.3s;
+}
+.header-container a:hover{
+    bottom: -7.5pt;
+    background-color: rgb(132, 133, 145, 0.75);
+}
+.header-container a:active{
+    bottom: -7.5pt;
+    background-color: #fff;
+    color: rgb(132, 133, 145);
+}
+.header-container p{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+	bottom: 10pt;
+}
+.header-gotop{
+    position: fixed;
+    z-index: 1500;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.header-gotop div{
+    position: absolute;
+    transform-origin: bottom right;
+    height: 110pt;
+    width: 200%;
+    bottom: 0;
+    right: -100pt;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.header-gotop div:hover, .header-gotop div:active{
+    height: 120pt;
+}
+.header-gotop a{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100pt;
+    top: 0;
+    right: 50pt;
+    transition: all 0.3s;
+}
+.header-gotop a:hover{
+    top: -5pt;
+    color: rgb(132, 133, 145);
+    background-color: rgb(76, 73, 105);
+}
+.header-gotop a:active{
+    top: -50pt;
+    height: 200pt;
+    color: #fff;
+    background-color: rgb(132, 133, 145);
+}
+.header-gotop a h2, .header-gotop a p{
+    position: absolute;
+    font-size: 5vh;
+    right: 70pt;
+}
+.header-gotop a p{
+    font-size: 3vh;
+    right: 65pt;
+    top: 30pt;
+}
+/*共通部分*/
+#about{
+    position: relative;
+    height: 800pt;
+    width: 100%;
+}
+.top{
+    height: 10pt;
+}
+#about span,#explain span{
+    transform-origin: bottom left;
+    position: absolute;
+    top: -50pt;
+    left: 20%;
+    width: 700pt;
+    height: 5pt;
+}
+.bg-paralax{
+    position: absolute;
+    overflow: hidden;
+    height: 110%;
+    width: 100%;
+    top: -200pt;
+    right: 0;
+    z-index: -10;
+    opacity: 0.5;
+}
+.bg-paralax .p-img{
+    position: absolute;
+    background-attachment: fixed;
+    background-position: left 0px top -0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.bg-paralax .p-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 74, 108, 0.5);
+    background-size: cover;
+    z-index: 10;
+}
+#about .about-container, #skills .skills-container{
+    position: relative;
+    left: 25%;
+    top: 160pt;
+    opacity: 0;
+}
+
+/*ABOUT*/
+#about .bg-paralax .p-img{
+    position: relative;
+    background-image: url("img/test1.jpeg");
+}
+#about .about-container{
+    line-height: 90pt;
+}
+#about h2{
+    margin-bottom: 30pt;
+    position: relative;
+    font-size: 10vh;
+    font-weight: normal;
+}
+#about p{
+    font-size: 5vh;
+}
+
+/**/
+#explain{
+    position: relative;
+    height: 1050pt;
+    width: 100%;
+}
+#explain span{
+    top: -170pt;
+    width: 1200pt;
+}
+#explain .explain-container{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 1100pt;
+}
+#explain .box1{
+    position: absolute;
+    top: 150pt;
+    left: 25%;
+    opacity: 0;
+    font-size: 1.5rem;
+    line-height: 40pt;
+}
+#explain .box2{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    top: 400pt;
+    left: 25%;
+    opacity: 0;
+    font-size: 1.2rem;
+}
+#explain .box2 div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(201, 202, 212);
+    width: 40%;
+}
+#explain .box2 div p{
+    margin: 10pt;
+}
+#explain .bottom{
+    position: absolute;
+    top: 1175pt;
+    height: 10pt;
+    z-index: 400;
+    width: 100%;
+}
+#explain .bottom div{
+    position: relative;
+    width: 200%;
+    height: 300pt;
+    left: -100pt;
+    top: -125pt;
+    text-align: right;
+}
+#explain .explain-container p{
+    text-align: center;
+    position: absolute;
+    font-family: 'PixelMplus12', sans-serif;
+    font-weight: lighter;
+    color: rgb(50, 48, 74, 0.25);
+    bottom: 225pt;
+    right: 50%;
+    z-index: 990;
+}
+#explain .over{
+    position: absolute;
+    top: -110pt;
+    height: 115%;
+    width: 100%;
+    background-color: #fff;
+    z-index: -1;
+}
+
+/*レイジーロード用アニメーション*/
+#about .about-container.lazy{
+    animation: lazy-load 0.75s both;
+}
+#explain .box1.lazy{
+    animation: lazy-load 0.75s both;
+}
+#explain .box2.lazy{
+    animation: lazy-load 0.75s both;
+}
+@keyframes lazy-load {
+    0%{ 
+        opacity: 0;
+        transform: translateY(150pt);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0pt);
+    }
+}
